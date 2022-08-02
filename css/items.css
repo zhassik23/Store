@@ -1,0 +1,107 @@
+/** Loader */
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: black;
+	visibility: visible;
+	opacity: 1;
+	transition: 1s all;
+	z-index: 12;
+}
+
+.loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 75px;
+	height: 75px;
+	border: 10px solid #fff;
+	border-radius: 50%;
+	border-top-color: #FF9800;
+	transform: translate(-50%, -50%); 
+	animation: 1s spin infinite linear;
+	z-index: 12;
+}
+
+.done {
+	opacity: 0;
+	visibility: hidden;
+}
+
+@keyframes spin {
+	from {
+		 transform: translate(-50%, -50%) rotate(0deg);
+	}
+	to {
+		 transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
+
+/* Progress bar */
+::-webkit-scrollbar {
+	width: 0;
+}
+
+#scrollPath {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 5px;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.05);
+	z-index: 10;
+}
+
+#progress_bar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 5px;
+	background: linear-gradient(to top, #005AFF, #00FFE7);
+	z-index: 10;
+}
+
+
+/* Scroll up button */
+.scroll_up_button {
+	position: fixed;
+   bottom: 10px;
+	right: 30px;
+	height: 40px;
+	width: 40px;
+	font-size: 30px;
+	color: #FF9800;
+   border: 5px solid #FF9800;
+	border-radius: 35%;
+	text-align: center;
+	z-index: 10;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	pointer-events: none;
+	opacity: 0;
+}
+
+.scroll_up_button:hover {
+   color: #FFFFFF;
+   background: #FF9800;
+	filter: brightness(80%);
+}
+
+.scroll_up_button.show {
+	bottom: 30px;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+@media screen and (min-width: 1024px) {
+	.scroll_up_button {
+		height: 3vw;
+		width: 3vw;
+		font-size: 1.6vw;
+		border: 0.3vw solid hsl(97, 67%, 61%);
+	}
+}
